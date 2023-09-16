@@ -35,7 +35,6 @@ function displayPhotos() {
 
 
     });
-
 }
 
 // Unsplash API
@@ -55,6 +54,15 @@ async function getPhotos() {
 // Catch error here 
     }
 }
+
+// Check to see if scrolling near bottom of page, Load More Photos
+window.addEventListener('scroll', () => {
+   if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 100){
+    getPhotos();
+    console.log('load more');
+
+   }
+});
 
 // On Load
 
